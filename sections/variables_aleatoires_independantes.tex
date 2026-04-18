@@ -1,0 +1,258 @@
+\section{V.A. indépendantes}
+    \subsection{Sommes doubles}
+
+        \subsubsection{Écriture d'une somme double comme deux sommes simples}
+            \begin{equation*}
+                \sum_{\substack{1 \le i \le n \\ 1 \le j \le m}} x_{i, j} = \sum_{i=1}^{n}\sum_{j=1}^{m} x_{i, j} = \sum_{j=1}^{m}\sum_{i=1}^{n} x_{i, j}
+            \end{equation*}
+
+        \subsubsection{Écriture d'une somme double comme deux sommes simples}
+            \begin{equation*}
+                \sum_{1 \le i \le j \le n} x_{i, j} = \sum_{i=1}^{n}\sum_{j=i}^{n} x_{i, j} = \sum_{j=1}^{n}\sum_{i=1}^{j} x_{i, j}
+            \end{equation*}
+
+        \subsubsection{Écriture d'une somme double comme deux sommes simples}
+            \begin{equation*}
+                \sum_{1 \le i < j \le n} x_{i, j} = \sum_{i=1}^{n-1}\sum_{j=i+1}^{n} x_{i, j} = \sum_{j=2}^{n}\sum_{i=1}^{j-1} x_{i, j}
+            \end{equation*}
+
+    \subsection{Couples de variables aléatoires}
+        \subsubsection{Évènement}
+            \begin{equation*}
+                \begin{split}
+                    [X = x, Y = y] &= [(X, Y) = (x, y)]\\
+                    &= [X = x, Y = y]\\
+                    &= \{\omega \in \Omega \mid (X(\omega), Y(\omega)) = (x, y)\}
+                \end{split}
+            \end{equation*}
+
+        \subsubsection{Système complet d'évènements associé à un couple}
+            Le système complet d'évènements associé au couple $(X, Y)$ est : 
+            \[
+                ([X = x, Y = y])_{(x, y) \in X(\Omega) \times Y(\Omega) }
+            \]  
+
+        \subsubsection{Loi d'un couple}
+            La loi d'un couple est donnée par 
+            \begin{enumerate}
+                \item $X(\Omega)$ et $Y(\Omega)$
+                \item $P([X = x, Y = y])$ pour tout $(x, y) \in X(\Omega) \times Y(\Omega)$
+            \end{enumerate}
+
+        \subsubsection{Probabilité d'égalité}
+            \begin{equation*}
+                P([X = Y]) = \sum_{x \in X(\Omega)} P([X=x, Y=x]) = \sum_{y \in Y(\Omega)} P([X=y, Y=y])
+            \end{equation*}
+
+        \subsubsection{Indépendance de deux variables aléatoires}
+            $X$ et $Y$ sont indépendantes si et seulement si $\forall (x, y) \in X(\Omega) \times Y(\Omega)$:
+            \begin{equation*}
+                P([X = x, Y = y]) = P(X = x)P(Y = y)
+            \end{equation*}
+
+        \subsubsection{Lois marginales}
+            On appelle lois marginales du couple $(X, Y)$ les lois respectives de $X$ et de $Y$.
+
+        \subsubsection{Formule des probabilités totales appliquée aux lois marginales}
+            \begin{align*}
+                \forall x \in X(\Omega),\ P([X = x]) &= \sum_{y \in Y(\Omega)} P(X = x, Y = y)\\
+                \forall y \in Y(\Omega),\ P([Y = y]) &= \sum_{x \in X(\Omega)} P(X = x, Y = y)
+            \end{align*}
+
+            Si $\forall y \in Y(\Omega),\ P([Y = y]) > 0$, alors : 
+            \begin{equation*}
+                \forall x \in X(\Omega),\ P([X = x]) = \sum_{y \in Y(\Omega)} P([Y = y]) \cdot P_{[Y = y]}([X = x])
+            \end{equation*}
+
+            Si $\forall x \in X(\Omega),\ P([X = x]) > 0$, alors : 
+            \begin{equation*}
+                \forall y \in Y(\Omega),\ P([Y = y]) = \sum_{x \in X(\Omega)} P([X = x]) \cdot P_{[X = x]}([Y = y])
+            \end{equation*}
+
+        \subsubsection{Lois conditionelles}
+            La loi conditionelle de $X$ sachant $[Y = y]$ est donnée par 
+            \begin{enumerate}
+                \item $X(\Omega)$
+                \item $P_{[Y = y]}(X = x)$ pour $x \in X(\Omega)$
+            \end{enumerate}
+
+    \subsection{Maximum de deux V.A.}
+
+        \subsubsection{Fonction de répartition}
+            Soit $X$ une variable aléatoire. On appelle fonction de répartition, notée
+            $F_X$, une fonction définie sur $\set{R}$ par la formule 
+            \[
+                F_X(x) = P([X \leq x])
+            \]
+
+        \subsubsection{Probabilité de tomber dans un intervalle}
+            Soit $X$ une variable aléatoire et $F_X$ sa fonction de répartition. Alors, 
+            $\forall (a,b) \in \sete{R}{2} \mid a < b$, on a :
+            \[
+                P(X \in \intervalle{]}{a}{b}{]}) = P([a < X \leq b]) = F_X(b) - F_X(a)
+            \]
+        
+        \subsubsection{Lien entre fonction de répartition et loi}
+            Soit $X$ une variable aléatoire telle que $X(\Omega) = \{x_0, x_1, ..., x_n\}$ avec 
+            $x_0 < x_1 < x_2 < ... < x_n$. Alors, 
+            \[
+                P(X = x_k) = \begin{cases}
+                F_X(x_k) - F_X(x_{k-1}) & \text{si } k > 0\\
+                F_X(x_0)  & \text{si } k = 0,
+                \end{cases}
+            \]
+
+        \subsubsection{Loi du maximum de deux variables aléatoires}
+            Soit $(X, Y)$ un couple de variables aléatoires. Alors, pour tout $z \in \set{R}$,
+            \[
+                [\max{X,Y} \leq z] = [X \leq z] \cap [Y \leq z] 
+            \]
+            Si, de plus, $X$ et $Y$ sont indépendants alors :
+            \[
+                F_{\max{X,Y}}(z) = F_X(z) \cdot F_Y(z) 
+            \]
+    
+    \subsection{Minimum de deux V.A.}
+
+        \subsubsection{Fonction de survie}
+            Soit $X$ une variable aléatoire. On appelle fonction de survie de $X$,
+            notée $S_X$, la fonction définie sur $\set{R}$ par la formule
+            \[
+                S_X(x) = P(X > x)
+            \]  
+
+        \subsubsection{Lien entre fonction de survie et loi}
+            Soit $X$ une variable aléatoire telle que $X(\Omega) = \{x_0, x_1, ..., x_n\}$ avec 
+            $x_0 < x_1 < x_2 < ... < x_n$. Alors, 
+            \[
+                P(X = x_k) = \begin{cases}
+                S_X(x_{k-1}) - S_X(x_k) & \text{si } k > 0\\
+                1 - S_X(x_0)  & \text{si } k = 0,
+                \end{cases}
+            \]
+
+        \subsubsection{Loi du minimum de deux variables aléatoires}
+            Soit $(X, Y)$ un couple de variables aléatoires. Alors, pour tout $z \in \set{R}$,
+            \[
+                [\min{X,Y} > z] = [X > z] \cap [Y > z] 
+            \]
+            Si, de plus, $X$ et $Y$ sont indépendants alors :
+            \[
+                S_{\min{X,Y}}(z) = S_X(z) \cdot S_Y(z) 
+            \]
+
+    \subsection{Somme de deux V.A. indépendantes}
+        \subsubsection{Loi de la somme ou formule de convolution}
+            Soit $(X, Y)$ un couple de variables aléatoires à valeurs dans $\set{N}$.
+            Alors la loi de la variable aléatoire $X + Y$ est donnée par la formule
+            \[
+                P(X + Y = n) = \sum_{k = 0}^{n} P(X = k, Y = n - k) = \sum_{k = 0}^{n} P(X = n - k, Y = k)
+            \]
+            En particulier, si $X$ et $Y$ sont indépendantes on a 
+            \[
+                P(X + Y = n) = \sum_{k = 0}^{n} P(X = k)P(Y = n - k) = \sum_{k = 0}^{n} P(X = n - k)P(Y = k)
+            \]
+
+        \subsubsection{Somme de variables aléatoires binomiales}
+            Soient $n, m \in \sete{N}{*}$ et $p \in \intervalle{[}{0}{1}{]}$.
+            Soient $X \hookrightarrow \mathcal{B}(n, p)$ et $Y \hookrightarrow \mathcal{B}(m, p)$. Alors,
+            \[
+                X + Y \hookrightarrow \mathcal{B}(n + m, p)
+            \]
+
+    \subsection{Espérance d'une variable associée à un couple}
+        \subsubsection{Théorème de transfert pour un couple}
+            Soit $(X, Y)$ un couple de variables aléatoires finies et $g : X(\Omega) \times Y(\Omega) \rightarrow \set{R}$ une fonction.
+            Alors, l'espérance de la variable aléatoire $g(X, Y)$ est donnée par la formule : 
+            \[
+                E(g(X, Y)) = \sum_{x \in X(\Omega)} \sum_{y \in Y(\Omega)} g(x, y)P(X = x, Y = y)
+            \]
+
+        \subsubsection{Indépendance et produit}
+            Soit $(X, Y)$ un couple de variables aléatoires finies. Si $X$ et $Y$ sont indépendantes
+            alors $E(XY) = E(X)E(Y)$ (la réciproque est fausse).
+
+    \subsection{Variance, covariance, corrélation}
+
+        \subsubsection{Covariance de deux variables aléatoires}
+            Soient $X$ et $Y$ deux variables aléatoires finies. On appelle covariance de $X$ et $Y$,
+            notée $cov(X, Y)$, le réel
+            \[
+                cov(X, Y) := E((X - E(X))(Y - E(X)))
+            \]
+
+        \subsubsection{Formule de Koenig-Huygens pour la covariance}
+            Soient $X$ et $Y$ deux variables aléatoires.
+            \[
+                cov(X, Y) = E(XY) - E(X)E(Y)
+            \]
+
+        \subsubsection{Corrélation d'un couple}
+            On dit que $X$ et $Y$ sont corrélées si et seulement si $cov(X, Y) \neq 0$.
+
+            On les dit non-corrélées si et seulement si $cov(X, Y) = 0$.
+
+        \subsubsection{Indépendance implique décorrélation}
+            Soient $X, Y$ deux variables aléatoires. On a donc :
+            \[
+                X \text{ et } Y \text{ sont indépendantes} \implies X \text{ et } Y \text{ sont non-corrélées}
+            \]
+        
+        \subsubsection{Variance de la somme}
+            Soient $X$ et $Y$ deux variables aléatoires finies et $a, b$ deux réels.
+            \begin{align*}
+                V(X + Y) &= V(X) + 2cov(X, Y) + V(Y)\\
+                V(aX + bY) &= a^2V(X) + 2abcov(X, Y) + b^2V(Y)
+            \end{align*}
+            De plus, si $X$ et $Y$ sont indépendantes alors :
+            \begin{align*}
+                V(X + Y) &= V(X) + V(Y)\\
+                V(aX + bY) &= a^2V(X) + b^2V(Y)
+            \end{align*}
+
+    \subsection{Indépendance mutuelle de variables aléatoires}
+
+        \subsubsection{Indépendance mutuelle de variables aléatoires discrètes}
+            On dit que les variables aléatoires discrètes $(X_i)_{i \in I}$ sont mutuellement indépendantes
+            si et seulement si,
+            \[
+                P\left( \bigcap_{i \in I} [X_i = x_i] \right) = \prod_{i \in I} P(X_i = x_i) \text{ pour tout } I \subset \set{N}
+            \]
+
+        \subsubsection{Indépendance deux à deux de variables aléatoires discrètes}
+            On dit que les variables aléatoires discrètes de la famille $(X_i)_{i \in I}$ sont deux à deux indépendantes
+            si et seulement si, pour tout $i, j \in I^2$ tels que $i \neq j$, $X_i$ et $X_j$ sont indépendantes.
+
+        \subsubsection{Lemme des coalitions, version 2}
+            Soit $(X_i)_{i \in [1; n]}$ une famille de variables aléatoires finies mutuellement indépendantes.
+            Alors les variables aléatoires $f((X_1, ..., X_m))$ et $g((X_{m+1}, ..., X_n))$ sont indépendantes 
+            pour toutes applications $f : \sete{R}{m} \rightarrow \set{R}$ et $f : \sete{R}{{n-m}} \rightarrow \set{R}$
+        
+        \subsubsection{Loi du maximum de $n$ variables aléatoires}
+            Soit $(X_i)_{i \in [1; n]}$ $n$ variables aléatoires. Alors pour tout $z \in \set{R}$,
+            \[
+                [\max{X_1, ..., X_n} \leq z] = \bigcap_{i = 1}^{n} [X_i \leq z]
+            \]
+            Si, de plus, les $X_k$ sont mutuellement indépendantes, alors
+            \[
+                F_{\max{X_1, ..., X_n}}(z) = \prod_{i = 1}^{n} F_{x_i}(z)
+            \]
+
+        \subsubsection{Loi du minimum de $n$ variables aléatoires}
+            Soit $(X_i)_{i \in [1; n]}$ $n$ variables aléatoires. Alors pour tout $z \in \set{R}$,
+            \[
+                [\min{X_1, ..., X_n} > z] = \bigcap_{i = 1}^{n} [X_i > z]
+            \]
+            Si, de plus, les $X_k$ sont mutuellement indépendantes, alors
+            \[
+                S_{\min{X_1, ..., X_n}}(z) = \prod_{i = 1}^{n} S_{x_i}(z)
+            \]
+        
+        \subsubsection{Somme de Bernoulli indépendantes}
+            Soient $p \in [0; 1]$ et $X_1, ..., X_n$ $n$ variables aléatoires indépendantes et de même
+            loi $\mathcal{B}(p)$ alors $X_1, ..., X_n \hookrightarrow \mathcal{B}(n,p)$.
+
+        \subsubsection{Somme de binomiales indépendantes}
+            Soit $p \in [0; 1]$ et $(m_1, ..., m_n) \in (\sets{N})^n$ et $X_1, ..., X_n$ $n$
+            variables aléatoires indépendantes de lois respectives $\mathcal{B}(m_1,p), \mathcal{B}(m_2,p), ...,
+            \mathcal{B}(m_n,p)$. Alors $X_1 + ... + X_m \hookrightarrow \mathcal{B}(m_1 + ... + m_n, p)$.

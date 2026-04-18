@@ -1,0 +1,72 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm, includefoot, includehead]{geometry}
+
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{relsize}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{diagbox}
+\usepackage{array}
+
+\usepackage[francais]{babel}
+
+\newcommand{\emailaddress}{noam.meraihia@lycee-berthollet.com}
+
+\setlength{\skip\footins}{10mm plus 2mm}
+\renewcommand*\contentsname{Sommaire}
+\renewcommand*{\abstractname}{Introduction ?}
+
+% raccourcis %
+
+\newcommand{\intervalle}[4]{\mathopen{#1}#2\,;#3\mathclose{#4}}
+\newcommand{\set}[1]{\mathbb{#1}}
+\newcommand{\sets}[1]{\mathbb{#1}^*}
+\newcommand{\sete}[2]{\mathbb{#1}^#2}
+\newcommand{\setp}[1]{\mathbb{#1}_+}
+\newcommand{\setsp}[1]{\mathbb{#1}_+^*}
+\newcommand{\setn}[1]{\mathbb{#1}_-}
+\newcommand{\setsn}[1]{\mathbb{#1}_-^*}
+\newcommand{\norm}[1]{\lvert\lvert #1 \rvert\rvert}
+
+\usepackage{fancyhdr} % en-tête & pied de page %
+
+\title{\textbf{Appro}\textit{Dex}}
+\author{Noam Meraihia}
+\date{Mis à jour le \today}
+
+\cfoot{Page \thepage}
+\pagestyle{fancy}
+
+\begin{document}
+    \maketitle
+
+    \begin{abstract}
+        Ce document est un condensé de formules, propositions, définitions et autres 
+        théorèmes des différents chapitres de mathématiques approfondies de la première année de prépa ECG.
+
+        Une version web existe : \url{https://approcodex.com/}. Le contenu est identique, mais cette dernière met à disposition un moteur de recherche
+        afin de faciliter le tout.
+
+        Les titres du \hyperref[sommaire]{Sommaire} sont cliquables et vous permettront d'accéder directement à la 
+        section, sous-section ou sous-sous-section souhaitée.
+
+        Si vous remarquez la moindre bêtise, merci de me le faire savoir ! \href{mailto:\emailaddress}{$\rightarrow$ me contacter.}
+
+    \end{abstract}
+
+    \tableofcontents
+    \label{sommaire}
+
+    \setlength{\headheight}{15pt}.
+    \newpage
+
+    \include{sections/variables_aleatoires_independantes.tex}
+    
+\end{document}
