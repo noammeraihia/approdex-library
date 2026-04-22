@@ -80,16 +80,16 @@
 
         \subsubsection{Fonction de répartition}
             Soit $X$ une variable aléatoire. On appelle fonction de répartition, notée
-            $F_X$, une fonction définie sur $\set{R}$ par la formule 
+            $F_X$, une fonction définie sur $\mathbb{R}$ par la formule 
             \[
                 F_X(x) = P([X \leq x])
             \]
 
         \subsubsection{Probabilité de tomber dans un intervalle}
             Soit $X$ une variable aléatoire et $F_X$ sa fonction de répartition. Alors, 
-            $\forall (a,b) \in \sete{R}{2} \mid a < b$, on a :
+            $\forall (a,b) \in \mathbb{R}^{2} \mid a < b$, on a :
             \[
-                P(X \in \intervalle{]}{a}{b}{]}) = P([a < X \leq b]) = F_X(b) - F_X(a)
+                P(X \in ]a;b]) = P([a < X \leq b]) = F_X(b) - F_X(a)
             \]
         
         \subsubsection{Lien entre fonction de répartition et loi}
@@ -103,7 +103,7 @@
             \]
 
         \subsubsection{Loi du maximum de deux variables aléatoires}
-            Soit $(X, Y)$ un couple de variables aléatoires. Alors, pour tout $z \in \set{R}$,
+            Soit $(X, Y)$ un couple de variables aléatoires. Alors, pour tout $z \in \mathbb{R}$,
             \[
                 [\max{X,Y} \leq z] = [X \leq z] \cap [Y \leq z] 
             \]
@@ -116,7 +116,7 @@
 
         \subsubsection{Fonction de survie}
             Soit $X$ une variable aléatoire. On appelle fonction de survie de $X$,
-            notée $S_X$, la fonction définie sur $\set{R}$ par la formule
+            notée $S_X$, la fonction définie sur $\mathbb{R}$ par la formule
             \[
                 S_X(x) = P(X > x)
             \]  
@@ -132,7 +132,7 @@
             \]
 
         \subsubsection{Loi du minimum de deux variables aléatoires}
-            Soit $(X, Y)$ un couple de variables aléatoires. Alors, pour tout $z \in \set{R}$,
+            Soit $(X, Y)$ un couple de variables aléatoires. Alors, pour tout $z \in \mathbb{R}$,
             \[
                 [\min{X,Y} > z] = [X > z] \cap [Y > z] 
             \]
@@ -143,7 +143,7 @@
 
     \subsection{Somme de deux V.A. indépendantes}
         \subsubsection{Loi de la somme ou formule de convolution}
-            Soit $(X, Y)$ un couple de variables aléatoires à valeurs dans $\set{N}$.
+            Soit $(X, Y)$ un couple de variables aléatoires à valeurs dans $\mathbb{N}$.
             Alors la loi de la variable aléatoire $X + Y$ est donnée par la formule
             \[
                 P(X + Y = n) = \sum_{k = 0}^{n} P(X = k, Y = n - k) = \sum_{k = 0}^{n} P(X = n - k, Y = k)
@@ -154,7 +154,7 @@
             \]
 
         \subsubsection{Somme de variables aléatoires binomiales}
-            Soient $n, m \in \sete{N}{*}$ et $p \in \intervalle{[}{0}{1}{]}$.
+            Soient $n, m \in \mathbb{N}^{*}$ et $p \in [0;1]$.
             Soient $X \hookrightarrow \mathcal{B}(n, p)$ et $Y \hookrightarrow \mathcal{B}(m, p)$. Alors,
             \[
                 X + Y \hookrightarrow \mathcal{B}(n + m, p)
@@ -162,7 +162,7 @@
 
     \subsection{Espérance d'une variable associée à un couple}
         \subsubsection{Théorème de transfert pour un couple}
-            Soit $(X, Y)$ un couple de variables aléatoires finies et $g : X(\Omega) \times Y(\Omega) \rightarrow \set{R}$ une fonction.
+            Soit $(X, Y)$ un couple de variables aléatoires finies et $g : X(\Omega) \times Y(\Omega) \rightarrow \mathbb{R}$ une fonction.
             Alors, l'espérance de la variable aléatoire $g(X, Y)$ est donnée par la formule : 
             \[
                 E(g(X, Y)) = \sum_{x \in X(\Omega)} \sum_{y \in Y(\Omega)} g(x, y)P(X = x, Y = y)
@@ -216,7 +216,7 @@
             On dit que les variables aléatoires discrètes $(X_i)_{i \in I}$ sont mutuellement indépendantes
             si et seulement si,
             \[
-                P\left( \bigcap_{i \in I} [X_i = x_i] \right) = \prod_{i \in I} P(X_i = x_i) \text{ pour tout } I \subset \set{N}
+                P\left( \bigcap_{i \in I} [X_i = x_i] \right) = \prod_{i \in I} P(X_i = x_i) \text{ pour tout } I \subset \mathbb{N}
             \]
 
         \subsubsection{Indépendance deux à deux de variables aléatoires discrètes}
@@ -226,10 +226,10 @@
         \subsubsection{Lemme des coalitions, version 2}
             Soit $(X_i)_{i \in [1; n]}$ une famille de variables aléatoires finies mutuellement indépendantes.
             Alors les variables aléatoires $f((X_1, ..., X_m))$ et $g((X_{m+1}, ..., X_n))$ sont indépendantes 
-            pour toutes applications $f : \sete{R}{m} \rightarrow \set{R}$ et $f : \sete{R}{{n-m}} \rightarrow \set{R}$
+            pour toutes applications $f : \mathbb{R}^{m} \rightarrow \mathbb{R}$ et $f : \mathbb{R}^{{n-m}} \rightarrow \mathbb{R}$
         
         \subsubsection{Loi du maximum de $n$ variables aléatoires}
-            Soit $(X_i)_{i \in [1; n]}$ $n$ variables aléatoires. Alors pour tout $z \in \set{R}$,
+            Soit $(X_i)_{i \in [1; n]}$ $n$ variables aléatoires. Alors pour tout $z \in \mathbb{R}$,
             \[
                 [\max{X_1, ..., X_n} \leq z] = \bigcap_{i = 1}^{n} [X_i \leq z]
             \]
@@ -239,7 +239,7 @@
             \]
 
         \subsubsection{Loi du minimum de $n$ variables aléatoires}
-            Soit $(X_i)_{i \in [1; n]}$ $n$ variables aléatoires. Alors pour tout $z \in \set{R}$,
+            Soit $(X_i)_{i \in [1; n]}$ $n$ variables aléatoires. Alors pour tout $z \in \mathbb{R}$,
             \[
                 [\min{X_1, ..., X_n} > z] = \bigcap_{i = 1}^{n} [X_i > z]
             \]
@@ -253,6 +253,6 @@
             loi $\mathcal{B}(p)$ alors $X_1, ..., X_n \hookrightarrow \mathcal{B}(n,p)$.
 
         \subsubsection{Somme de binomiales indépendantes}
-            Soit $p \in [0; 1]$ et $(m_1, ..., m_n) \in (\sets{N})^n$ et $X_1, ..., X_n$ $n$
+            Soit $p \in [0; 1]$ et $(m_1, ..., m_n) \in (\mathbb{N}^{*})^n$ et $X_1, ..., X_n$ $n$
             variables aléatoires indépendantes de lois respectives $\mathcal{B}(m_1,p), \mathcal{B}(m_2,p), ...,
             \mathcal{B}(m_n,p)$. Alors $X_1 + ... + X_m \hookrightarrow \mathcal{B}(m_1 + ... + m_n, p)$.
